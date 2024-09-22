@@ -1,0 +1,18 @@
+package ejercicio05;
+
+public class ClienteZipPais {
+
+	public static void main(String[] args) {
+		new ClienteZipPais();
+
+	}
+	
+	private final int PORT = 13;
+	private final String HOST = "localhost";
+	
+	public ClienteZipPais() {
+		GenerateZipPais generateZipPais =new GenerateZipPais();
+		generateZipPais.procesar();
+	}
+
+}

@@ -1,0 +1,13 @@
+package ejercicio05;
+
+public class GenerateZipPais {
+
+	public static void main(String[] args) {
+		GenerateZipPais generateZipPais = new GenerateZipPais();
+		generateZipPais.procesar();
+
+	}
+	public void procesar() {
+		
+	}
+}

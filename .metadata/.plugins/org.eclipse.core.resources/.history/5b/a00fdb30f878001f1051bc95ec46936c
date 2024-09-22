@@ -1,0 +1,10 @@
+package ejercicio06;
+
+public class ServerZipCatalogo {
+
+	public static void main(String[] args) {
+		new ServerZipCatalogo();
+
+	}
+
+}

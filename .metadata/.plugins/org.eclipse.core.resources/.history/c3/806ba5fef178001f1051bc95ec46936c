@@ -1,0 +1,49 @@
+package ejercicio05;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class GenerateZipPais {
+
+	public static void main(String[] args) {
+		GenerateZipPais generateZipPais = new GenerateZipPais();
+		generateZipPais.procesar();
+
+	}
+	public void procesar() {
+		ArrayList<Pais> paises = new ArrayList<Pais>();
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet resultSet = null;
+		
+		 try {
+	            connection = MySqlDBConexion.getConexion();
+	            String query = "SELECT * FROM pais";
+	            preparedStatement = connection.prepareStatement(query);
+	            resultSet = preparedStatement.executeQuery();
+	            while (resultSet.next()) {
+	                int idPais = resultSet.getInt("idPais");
+	                String iso = resultSet.getString("iso");
+	                String nombre = resultSet.getString("nombre");
+	                Pais pais = new Pais(idPais, iso, nombre);
+	                paises.add(pais);
+	            }
+	           
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        } finally {
+	            try {
+	                resultSet.close();
+	                preparedStatement.close();
+	                connection.close();
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	        
+	        System.out.println(paises);
+	}
+}

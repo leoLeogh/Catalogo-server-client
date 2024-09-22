@@ -1,0 +1,6 @@
+package ejercicio01;
+
+public class Auto {
+	private int idAuto;
+    private String marca;
+}

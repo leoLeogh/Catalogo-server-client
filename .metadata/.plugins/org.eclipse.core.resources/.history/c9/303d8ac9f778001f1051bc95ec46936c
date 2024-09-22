@@ -1,0 +1,10 @@
+package ejercicio06;
+
+public class ClienteZipCatalogo {
+
+	public static void main(String[] args) {
+		new ClienteZipCatalogo();
+
+	}
+
+}
